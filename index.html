@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temperature Converter</title>
+    <!-- Bootstrap CDN-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <style>
+        #containercolor {
+            background-color: aquamarine;
+            margin-top: 5%;
+            padding-bottom: 5%;
+        }
+
+        #cel,
+        #fah {
+            height: 3rem;
+            width: 85%;
+            font-size: 30px;
+            font-weight: bolder;
+        }
+
+        label {
+            font-size: 20px;
+        }
+        .btn-width{
+            width:150px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="containercolor">
+        <div class="row justify-content-center">
+            <div class="col-11 display-6 text-center pt-3 pb-3">Temperature Converter</div>
+            <hr>
+            <div class="row justify-content-evenly">
+                <div class="col-md-4 pt-4 input-field">
+                    <div>
+                        <label for="cel" class="form-label">Celcius</label>
+                        <input type="number" class="form-control text-center" id="cel" value="0">
+                    </div>
+                </div>
+                <div class="col-md-4 pt-4 input-field">
+                    <div>
+                        <label for="fah" class="form-label">Fahrenheit</label>
+                        <input type="number" class="form-control text-center" id="fah" value="32">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var cel = document.getElementById("cel");
+        var fah = document.getElementById("fah");
+
+        cel.addEventListener('input', function () {
+            let c = this.value;
+            let f = (c * 9 / 5) + 32;
+            if (!Number.isInteger(f)) {
+                f = f.toFixed(4);
+            }
+            fah.value = f;
+        });
+
+        fah.addEventListener('input', function () {
+            let f = this.value;
+            let c = (f - 32) * 5 / 9;
+            if (!Number.isInteger(c)) {
+                c = c.toFixed(4);
+            }
+            cel.value = c;
+        });
+    </script>
+</body>
+</html>
