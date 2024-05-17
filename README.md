@@ -4,5 +4,5 @@ Technologies used: Bootstrap and JAVASCRIPT.
 
 
 ******************************Check Project Working************************************
-https://niteshratre.github.io/TemperatureConverter/
+https://nits-hub.github.io/TemperatureConverter/
 ***************************************************************************************
